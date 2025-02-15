@@ -29,6 +29,9 @@ addTaskForm.onsubmit = function (e) {
     priorityOption.value
   );
   addTask(newTask);
+  taskInput.value = "";
+  dateInput.value = "";
+  priorityOption.value = "";
 };
 
 function loadTasks() {
@@ -104,7 +107,7 @@ function renderTask(task) {
                   ${task.taskDueDate}
                 </td>
                 ${taskPriorityString}
-                <td class="text-start px-5 text-slate-500 font-semibold">
+                <td class="text-center px-5 text-slate-500 font-semibold">
                   <button class="${taskButtonStyle}">
                     ${taskButtonTitle}
                   </button>
