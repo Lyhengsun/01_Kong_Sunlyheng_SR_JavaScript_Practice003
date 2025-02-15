@@ -12,19 +12,27 @@
       Javascript Practice 003
     </h1>
     <section class="flex">
-      <article class="basis-1/2 flex flex-col gap-6 items-start flex-shrink-0">
+      <form
+        id="add-task-form"
+        class="basis-1/2 flex flex-col gap-6 items-start flex-shrink-0"
+      >
         <h2 class="text-3xl font-bold">Add Tasks</h2>
         <div class="w-3/4">
-          <label for="task-input" class="block mb-2">Task Name</label>
+          <label for="task-input" class="block mb-2 font-semibold"
+            >Task Name</label
+          >
           <input
             id="task-input"
             type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="HRD Homework"
+            required
           />
         </div>
         <div class="w-3/4">
-          <label for="date-input" class="block mb-2">Choose Date</label>
+          <label for="date-input" class="block mb-2 font-semibold"
+            >Choose Date</label
+          >
           <div class="relative">
             <div
               class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
@@ -47,17 +55,21 @@
               type="text"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Select date"
+              required
             />
           </div>
         </div>
         <div class="w-3/4">
-          <label for="priority-option" class="block mb-2">Priority</label>
+          <label for="priority-option" class="block mb-2 font-semibold"
+            >Priority</label
+          >
           <select
             name=""
             id="priority-option"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
           >
-            <option class="text-slate-400" value="default" selected>
+            <option class="text-slate-400" value="" selected>
               Select Priority
             </option>
             <option class="text-green-400" value="low">Low</option>
@@ -66,12 +78,13 @@
           </select>
         </div>
         <button
-          type="button"
+          id="add-btn"
+          type="submit"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
           Add New Task
         </button>
-      </article>
+      </form>
       <article class="basis-1/2">
         <h2 class="text-3xl font-bold mb-6">Tasks List</h2>
         <article>
@@ -92,8 +105,8 @@
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="task-list">
+              <!-- <tr>
                 <td class="text-start px-5 py-4 text-slate-500 font-semibold">
                   Complete
                 </td>
@@ -108,7 +121,7 @@
                     Pending
                   </button>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </article>
